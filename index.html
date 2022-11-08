@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>타이머</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <h1 class="ir">타이머</h1>
+    </header>
+    <section class="section">
+        <header class="logo">
+            <h2><img src="./images/weniv-logo.svg" alt="킹갓위니브"></h2>
+        </header>
+        <article class="timer">
+            <header class="timer_header">
+                <h3>Timer</h3>
+            </header>
+            <input id="hour" type="text" value="00" maxlength="2">
+            <input id="minute" type="text" value="00" maxlength="2" >
+            <input id="second" type="text" value="00" maxlength="2">
+            <button class="startBtn"><img src="./images/start-disabled.png" alt="타이머 시작 이미지"></button>
+            <button class="pauseBtn"><img src="./images/pause.png" alt="타이머 중지 이미지"></button>
+            <button class="resetBtn"><img src="./images/reset-disabled.png" alt="타이머 초기화 이미지"></button>
+        </article>
+    </section>
+
+    <script src="./app.js"></script>
+</body>
+</html>
