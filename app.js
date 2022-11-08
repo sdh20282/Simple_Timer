@@ -24,22 +24,18 @@ function startTimer(event) {
         return;
     }
 
-    totalTime -= 1;
-    $hour.value = fillZero(parseInt(totalTime / 3600));
-    $minute.value = fillZero(parseInt((totalTime % 3600) / 60));
-    $second.value = fillZero((totalTime % 3600) % 60);
-
     timerId = setInterval(() => {
-        if (totalTime <= 0) {
+        if (totalTime <= 1) {
             clearInterval(timerId);
-            alert('Timer End');
+            setTimeout(() => {
+                alert('Timer End');
+            }, 0);
         }
-        else {
-            totalTime -= 1;
-            $hour.value = fillZero(parseInt(totalTime / 3600));
-            $minute.value = fillZero(parseInt((totalTime % 3600) / 60));
-            $second.value = fillZero((totalTime % 3600) % 60);
-        }
+
+        totalTime -= 1;
+        $hour.value = fillZero(parseInt(totalTime / 3600));
+        $minute.value = fillZero(parseInt((totalTime % 3600) / 60));
+        $second.value = fillZero((totalTime % 3600) % 60);
     }, 1000);
 }
 
