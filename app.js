@@ -20,6 +20,15 @@ function checkNumber(event) {
 function startTimer(event) {
     let totalTime = +$hour.value * 3600 + +$minute.value * 60 + +$second.value;
 
+    if (totalTime <= 0) {
+        return;
+    }
+
+    totalTime -= 1;
+    $hour.value = fillZero(parseInt(totalTime / 3600));
+    $minute.value = fillZero(parseInt((totalTime % 3600) / 60));
+    $second.value = fillZero((totalTime % 3600) % 60);
+
     timerId = setInterval(() => {
         if (totalTime <= 0) {
             clearInterval(timerId);
@@ -27,7 +36,6 @@ function startTimer(event) {
         }
         else {
             totalTime -= 1;
-
             $hour.value = fillZero(parseInt(totalTime / 3600));
             $minute.value = fillZero(parseInt((totalTime % 3600) / 60));
             $second.value = fillZero((totalTime % 3600) % 60);
