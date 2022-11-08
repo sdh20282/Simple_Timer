@@ -1,20 +1,28 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css");
 
-body, h1, h2, h3, button {
+body,
+h1,
+h2,
+h3,
+button,
+form,
+fieldset,
+input {
     padding: 0;
     margin: 0;
     font-size: inherit;
     font-weight: inherit;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Pretendard';
+    font-family: 'Pretendard', sans-serif;
     background: linear-gradient(to bottom right, #ffffff, #8198D0);
-    background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
@@ -22,6 +30,11 @@ button {
     background: none;
     border: none;
     cursor: pointer;
+}
+
+fieldset,
+input {
+    border: none;
 }
 
 .ir {
@@ -61,6 +74,8 @@ button {
 .section .timer .timer_header {
     color: white;
     margin-bottom: 33px;
+    font-size: 24px;
+    font-weight: bold;
 }
 
 .section .timer .timer_header::after {
@@ -73,10 +88,89 @@ button {
     vertical-align: top;
 }
 
-button {
-    display: block;
+.section form {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    margin-bottom: 40px;
 }
 
-button img {
+.section form fieldset {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.section form fieldset label {
+    font-size: 12px;
+    font-weight: bold;
+    color: #A5B6EE;
+}
+
+.section form fieldset input {
+    width: 80px;
+    height: 80px;
+    margin-top: 4px;
+    text-align: center;
+    border: 1px solid #354971;
+    background: linear-gradient(to bottom right, #4C65A0, #324577);
+    border-radius: 5px;
+    font-family: 'Pretendard', sans-serif;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.section form fieldset label::before {
+    content: ' ';
+    position: absolute;
+    display: block;
+    width: 15px;
+    height: 1px;
+    background-color: #354971;
+    left: 0;
+    top: 58px;
+}
+
+.section form fieldset label::after {
+    content: ' ';
+    position: absolute;
+    display: block;
+    width: 15px;
+    height: 1px;
+    background-color: #354971;
+    right: 0;
+    top: 58px;
+}
+
+.section form fieldset input:focus {
+    outline: 1px solid #A5B6EE;
+}
+
+.section form fieldset+fieldset::before {
+    content: ' ';
+    position: absolute;
+    background-image: url(./images/dot.png);
+    background-repeat: no-repeat;
+    width: 6px;
+    height: 26px;
+    left: -14px;
+    top: 44px;
+}
+
+.section button {
+    width: 112px;
+}
+
+.section button img {
     vertical-align: top;
+    width: 100%;
+}
+
+.section .pauseBtn {
+    display: none;
+}
+
+.section .resetBtn {
+    margin-left: 12px;
 }
